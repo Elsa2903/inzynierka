@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+
+{
+box-sizing: border-box;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 0px;
+    width:100%;
+    height: 100%;
+    background-color:  #f2f2f2;
+}
+
+.col-9 {width: 100%; }
+
+html {
+    font-family: "Lucida Sans", sans-serif;
+}
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+.tabmv {
+    overflow: hidden;
+    background-color: #cce6ff;
+    font-size:18px;
+    height:3em;
+    line-height:3em;
+    text-align:center;
+}
+
+.tabmv button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+
+}
+
+.tabmv button:hover {
+   background-color:  #5900b3;
+   }
+
+.tabmv button.active {
+    background-color: #99ccff;
+}
+
+.tabcontentmv {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+
+}
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #cce6ff;
+    width: 15%;
+    height: 89vh;
+}
+
+.tab button {
+    display: block;
+    position:relative;
+    background-color: #cce6ff;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+        background-color: #5900b3;
+                color: #cce6ff;
+
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #99ccff;
+}
+
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 85%;
+    border-left: none;
+    height: 100%;
+}
+
+</style>
+</head>
+<body style="background-image:url('/static/back_ground.jpg')">
+
+<header style="background-color=#FFF;">
+      <a href="{{url_for('login')}}">
+                    <img src="/static/login.png"  style=" width:25px; margin:0px 98%;"> </a>
+   
+</header>
+  <div id="content">
+
+      {% block content %}{% endblock %}
+
+  </div>
+</body>
+</html>

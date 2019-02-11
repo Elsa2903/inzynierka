@@ -1,0 +1,24 @@
+{% extends "Tasks-admin.html" %}
+{% block content2%}
+
+<div align="left" style="margin-left: 25em ; margin-top: 3em">
+<form action="{{ url_for('updatetask') }}" method="post">
+        Task name:<br>
+        <input type="text" name="task_name" size="29" value={{task_name}}>
+        <br>
+        Desciption:<br>
+        <textarea rows="15" cols="50"  name="description">
+            {{text}}
+              </textarea>  
+       <br>
+        Test scrypt:
+        <br>
+        <textarea rows="5" cols="50"  name="testmethod">
+            {{test_method}}
+              </textarea>
+        <br> <br>
+        <input type="submit" value="Submit">
+      </form> 
+</div>
+
+{% endblock %}

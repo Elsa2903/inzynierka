@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content  %}
+
+<div class="tabmv">
+    <a href="{{ url_for('main')}} "><button>Home</button></a>
+    <a href="{{ url_for('theory')}} "><button >Theory</button></a>
+    <a href="{{ url_for('tasks')}} "><button>Tasks</button></a>
+</div>
+<div class="col-9" style="height:89vh; width: 100%;">
+		<div class="row large-rounded">
+			<center><div class="login ">
+				<div class="modal-header">
+
+				<h3>Log In</h3>
+				</div> <br>
+				    <div class="login_session" >
+					<form class="form-signin" method="post" action="/process">
+						<label for="login-input">User Name</label>
+
+						<div class="input">
+						  <input id="login-input" type="text" name="login" placeholder="Enter login">
+						</div>
+                        <br>
+						<label for="password-input">Password</label>
+	                    <div class="input">
+	                     <input id="password-input" type="password"  name="password" placeholder="Password">
+	                    </div>
+                        	                        <br>
+
+						<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+					</form>
+					</div>
+
+			</div>
+			</center>
+
+		</div>
+	</div>
+
+{% endblock %}

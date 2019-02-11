@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content  %}
+
+<div class="tabmv">
+    <a href="{{ url_for('main')}} "><button>Home</button></a>
+    <a href="{{ url_for('theory')}} "><button >Theory</button></a>
+    <a href="{{ url_for('tasks')}} "><button class="active">Tasks</button></a>
+    {% block content1%}{% endblock %}
+</div>
+<div>
+
+<div class="col-9" style="height:89vh; width: 100%;">
+    <div class="tab">
+    {% for task in tasks_list %}
+    <form action="{{ url_for('task_get') }}" method="post">
+    <button class="tablinks" onclick="task_get()" name="name" value={{task}} class="active"> {{ task }}</button>
+    </form>
+    {% endfor %}    
+
+</div>
+{% block content2%}
+  {% autoescape false %}
+            {{text}}
+    {% endautoescape %}
+    <form action="{{ url_for('submit') }}" method="post">
+    <input method="post" name="name" value="{{task_name}}" align="right" style="margin-left:476px">
+
+     <p align="right" style="margin-right:10px; margin-top:-100px">
+        <textarea rows="30" cols="100"  name="text">
+        </textarea>
+        <button id="btnSubmit" onclick="submit()">Submit</button>
+    </p>
+ </form> 
+ {% endblock %}
+</div>
+
+</div>
+<script>
+
+var textareas = document.getElementsByTagName('textarea');
+var count = textareas.length;
+for(var i=0;i<count;i++){
+    textareas[i].onkeydown = function(e){
+        if(e.keyCode==9 || e.which==9){
+            e.preventDefault();
+            var s = this.selectionStart;
+            this.value = this.value.substring(0,this.selectionStart) + "\t" + this.value.substring(this.selectionEnd);
+            this.selectionEnd = s+1;
+        }
+    }
+}
+</script>
+{% endblock %}

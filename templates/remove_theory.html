@@ -1,0 +1,25 @@
+{% extends "Theory-admin.html" %}
+{% block content2%}
+
+      <font size="+2">
+                            <form action="{{ url_for('removetheory') }}" method="post">
+
+          {% for theory in theory_list %}
+
+          <p align="center">
+
+                  <input type="checkbox" onclick="removetheory()" name="name" value={{theory}}> {{ theory }}
+                      </input>
+
+          </p>
+                  {% endfor %}
+                  <p align="center">
+
+                        <input type="submit" value="Submit" align="center">
+                      </p>                  
+                </form>
+
+      </font>
+
+
+{% endblock %}

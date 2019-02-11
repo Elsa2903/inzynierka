@@ -1,0 +1,9 @@
+{% extends "Theory.html" %}
+{% block content1  %}
+<div class="tabmv" align="right">
+     <a href="{{ url_for('create_theory')}} "><button>Add new theory</button></a>
+     <a href="{{ url_for('remove_theory')}} "><button>Remove theory </button></a>
+     <a href="{{ url_for('update_theory')}} "><button>Update theory </button></a>
+
+</div>
+{% endblock %} 

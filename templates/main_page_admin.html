@@ -1,0 +1,24 @@
+{% extends "main_page.html" %}
+
+{% block content1%}
+    <style>
+    table, th, td {
+      border: 1px solid black;
+      width: 396px;
+    }
+    </style>
+
+    <table align="right"  style="margin-top:-100px;margin-right:224px">
+        <font size="+1">
+              <tr>
+                    <th>Comments</th>
+              </tr>
+                   {% for comm in comments %}
+                      <tr>
+                            <td>{{comm}}</td>
+                      </tr>
+                   {% endfor %}
+        </font>
+
+</table>
+{% endblock %}

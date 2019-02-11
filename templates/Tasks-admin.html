@@ -1,0 +1,8 @@
+{% extends "Tasks.html" %}
+{% block content1  %}
+<div class="tabmv" align="right">
+     <a href="{{ url_for('create_task')}} "><button>Create new task</button></a>
+     <a href="{{ url_for('remove_task')}} "><button>Remove task</button></a>
+     <a href="{{ url_for('update_task')}} "><button>Update task</button></a>
+</div>
+{% endblock %} 

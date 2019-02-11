@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content  %}
+
+<div class="tabmv">
+    <a href="{{ url_for('main')}} "><button>Home</button></a>
+    <a href="{{ url_for('theory')}} "><button class=" active">Theory</button></a>
+    <a href="{{ url_for('tasks')}} "><button >Tasks</button></a>
+    
+</div>
+
+
+<div class="col-9" style="height:89vh; width: 100%;">
+
+<div>
+    <p><img src="../static/figure.png" alt="Time Complexity" width="400" height="310" />
+    </p>
+    <p>Time complexity: X</p>
+    <p>TABLE with results</p>
+    <p>&nbsp;</p></div>
+</div>
+{% endblock %}

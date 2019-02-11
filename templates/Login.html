@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style>
+[class*="login"] {
+    float: left;
+    width:100%;
+    background-color: #e8e8ff;
+}
+[class*="login_session"] {
+
+    background-color:  #f2f2f2;
+}
+[class*="input"] {
+
+        height:2em;
+        line-height:2em;
+        text-align:center;
+    width : 50px;
+}
+[class*="button"] {
+
+        height:2em;
+        line-height:2em;
+        text-align:center;
+    width : 150px;
+}
+
+</style>
+</head>
+<body style="background-color:#e8e8ff;">
+	<div class="container">
+		<div class="row large-rounded">
+			<center><div class="login ">
+				<div class="modal-header">
+
+				<h3>Log In</h3>
+				</div>
+				    <div class="login_session" >
+					<form class="form-signin" method="post" action="/process">
+						<label for="login-input">User Name</label>
+						<div class="input">
+						  <input id="login-input" type="text" name="login" placeholder="Enter login">
+						</div>
+						<label for="password-input">Password</label>
+	                    <div class="input">
+	                     <input id="password-input" type="password"  name="password" placeholder="Password">
+	                    </div>
+						<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+					</form>
+					</div>
+
+			</div>
+			</center>
+
+		</div>
+	</div>
+
+
+</body>
+</html>

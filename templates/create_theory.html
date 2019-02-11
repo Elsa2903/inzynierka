@@ -1,0 +1,19 @@
+{% extends "Theory-admin.html" %}
+{% block content2%}
+
+<div align="left" style="margin-left: 25em ; margin-top: 3em">
+<form action="{{ url_for('addtheory') }}" method="post">
+        Theory name:<br>
+        <input type="text" name="theory_name" size="29">
+        <br>
+        Desciption:
+        <br>
+        <textarea rows="30" cols="80"  name="description">
+        </textarea>
+       <br>
+        <br>
+              <input type="submit" value="Submit" align="center">
+      </form>
+    </div>
+
+{% endblock %}

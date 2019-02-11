@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content  %}
+
+<div class="tabmv">
+    <a href="{{ url_for('main')}} "><button>Home</button></a>
+    <a href="{{ url_for('theory')}} "><button class=" active">Theory</button></a>
+    <a href="{{ url_for('tasks')}} "><button >Tasks</button></a>
+    {% block content1%}{% endblock %}
+
+</div>
+<div>
+
+    <div class="col-9" style="height:89vh; width: 100%;">
+        <div class="tab">
+        {% for theory in theory_list %}
+        <form action="{{ url_for('theory_get') }}" method="post">
+        <button class="tablinks" onclick="theory_get()" name="name" value={{theory}}> {{ theory }}</button>
+        </form>
+        {% endfor %}    
+    
+    </div>
+    {%block content2 %}
+    <p align="left" style="margin-left:40px; margin-top:15px; margin-right:3em;">
+        {% autoescape false %}
+            <font size="+1">
+               {{text}}
+            </font>
+        {% endautoescape %}
+    </p>
+  {% endblock %}
+
+    </div>
+    
+{% endblock %}
